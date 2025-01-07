@@ -1,0 +1,25 @@
+@keyframes dots {
+    0%, 20% { content: ""; }
+    40% { content: "."; }
+    60% { content: ".."; }
+    80%, 100% { content: "..."; }
+}
+
+.time-container {
+    width: 25%;
+    min-height: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.loading::after {
+    content: "";
+    animation: dots 1.5s infinite;
+}
+
+.loaded::after {
+    content: "";
+    animation: none;
+}
