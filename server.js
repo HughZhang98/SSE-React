@@ -23,11 +23,11 @@ app.get("/", (req, res) => {
     res.write(`data: 测试消息${messageCount++}，\n\n`);
   }, 5000);
 
-	connections.add(interval); // 保存interval引用
+  connections.add(interval); // 保存interval引用
 
   req.on("close", () => {
     clearInterval(interval);
-		connections.delete(interval);
+    connections.delete(interval);
     console.log("Client disconnected");
   });
 });
